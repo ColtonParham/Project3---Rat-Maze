@@ -1,6 +1,7 @@
 /* Java program to solve Rat in
  a Maze problem using backtracking */
- 
+ import java.io.*;
+ import java.util.*;
  public class ratterMaze {
  
   // Size of the maze
@@ -88,6 +89,46 @@
       return false;
   }
 
+// Printing Path: 
+static ArrayList<String> res;
+    public static ArrayList<String> findPath(int[][] m, int n) {
+        res = new ArrayList<>();
+          // dx, dy will be used to follow `DLRU` exploring approach
+          // which is lexicographically sorted order
+        int[] dx = { 1,  0, 0, -1 };
+        int[] dy = { 0, -1, 1,  0 };
+        if (m[0][0] == 1) {
+            m[0][0] = 2;
+            findPathHelper(m, n, 0, 0, dx, dy, "");
+        }
+        return res;
+    }
+     
+    private static void findPathHelper(int[][] m, int n, int x, int y, int[] dx, int[] dy, String path) {
+        if (x == n - 1 && y == n - 1) {
+            res.add(path);
+            return;
+        }
+        String dir = "DLRU";
+        for (int i = 0; i < 4; i++) {  
+            int row = x + dx[i];
+            int col = y + dy[i];
+            if (isValid(row, col, m, n)) {
+                m[row][col] = 2;                // used to track visited cells of matrix
+                findPathHelper(m, n, row, col, dx, dy, path + dir.charAt(i));
+                m[row][col] = 1;                // mark it unvisited yet explorable
+            }
+        }
+    }
+     
+    private static boolean isValid(int row, int col, int[][] m, int n) {
+        if (row >= 0 && row < n && col >= 0 && col < n && m[row][col] == 1) {
+            return true;
+        }
+        return false;
+    }
+
+
 
   // still needs a button to prompt the run... maybe might need something that will do it in order, or a prompt for the different array options to traverse through..
   public static void main(String args[])
@@ -110,8 +151,13 @@
        System.out.println("");
 
 
+      System.out.println("Path found in Maze for Rat to Traverse");
       N = maze.length;
       rat.solveMaze(maze);
-       
+
+      // Printing the Path
+      System.out.println("\nPath for Rat to Traverse");
+      ArrayList<String> ans = findPath(maze, N);
+      System.out.println(ans);
   }
 }
