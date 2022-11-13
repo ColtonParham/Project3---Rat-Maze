@@ -109,7 +109,7 @@ static ArrayList<String> res;
             res.add(path);
             return;
         }
-        String dir = "DLRU";
+        String dir = "SWEN";
         for (int i = 0; i < 4; i++) {  
             int row = x + dx[i];
             int col = y + dy[i];
