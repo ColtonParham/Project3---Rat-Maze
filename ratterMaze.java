@@ -136,8 +136,8 @@ static ArrayList<String> res;
       ratterMaze rat = new ratterMaze();
       int maze[][] = { { 1, 0, 0, 0 },
                        { 1, 1, 0, 1 },
-                       { 0, 1, 0, 0 },
-                       { 1, 1, 1, 1 } };
+                       { 0, 1, 1, 0 },
+                       { 1, 0, 1, 1 } };
 
        System.out.println("Initial Maze for Rat to Traverse");
  
