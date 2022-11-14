@@ -130,14 +130,17 @@ static ArrayList<String> res;
 
 
 
+    // as long as the number of entries, and the number of rows are the same, it will work... 
   // still needs a button to prompt the run... maybe might need something that will do it in order, or a prompt for the different array options to traverse through..
   public static void main(String args[])
   {
       ratterMaze rat = new ratterMaze();
-      int maze[][] = { { 1, 0, 0, 0 },
-                       { 1, 1, 0, 1 },
-                       { 0, 1, 1, 0 },
-                       { 1, 0, 1, 1 } };
+      int maze[][] = { { 1, 0, 0, 0, 0, 0 },
+      { 1, 1, 0, 1, 0, 1 },
+      { 0, 1, 0, 1, 1, 1 },
+      { 1, 1, 1, 1, 0, 1 }, 
+      { 1, 1, 1, 1, 1, 1 },
+      { 1, 1, 1, 1, 0, 1 } };
 
        System.out.println("Initial Maze for Rat to Traverse");
  
@@ -151,6 +154,7 @@ static ArrayList<String> res;
        System.out.println("");
 
 
+              // traversal issue 
       System.out.println("Path found in Maze for Rat to Traverse");
       N = maze.length;
       rat.solveMaze(maze);
