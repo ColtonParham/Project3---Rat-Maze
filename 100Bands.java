@@ -1,7 +1,7 @@
 // Java implementation of the above approach
 import java.util.*;
  
-class GFG{
+class bands{
      
 // Vector to store all the possible paths
 static Vector<String> possiblePaths = new Vector<>();
