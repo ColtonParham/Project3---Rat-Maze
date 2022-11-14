@@ -1,5 +1,9 @@
 /* Java program to solve Rat in
  a Maze problem using backtracking */
+
+
+
+ // maybe a way of checking to see if the correct thing is being ran is by the length of the OUTPUT. LIKE SESSSEEEES - IT IS THE SHORTEST POSSIBLE PATH. - This is to be confirmed later, but it needs to check the outputs for the looped through items, with their respective lengths, to be compared against eachother then only display the smallest one. - Might be worth to sort them by length first then only display the -1th entry from the list. 
  import java.io.*;
  import java.util.*;
  public class ratterMaze {
@@ -128,6 +132,16 @@ static ArrayList<String> res;
         return false;
     }
 
+    public static void print2D(int mat[][])
+    {
+        // Loop through all rows
+        for (int[] row : mat)
+ 
+            // converting each row as string
+            // and then printing in a separate line
+            System.out.println(Arrays.toString(row));
+    }
+
 
 
     // as long as the number of entries, and the number of rows are the same, it will work... 
@@ -141,25 +155,22 @@ static ArrayList<String> res;
       { 0, 1, 0, 1, 1, 1 },
       { 1, 1, 1, 1, 0, 1 }, 
       { 1, 1, 1, 1, 1, 1 },
-      { 1, 1, 1, 1, 0, 1 } };
+      { 1, 1, 1, 1, 0, 1 } // seems to be ignoring this..
+    
+    };
 
+
+    // cutting out temporarily 
        System.out.println("Initial Maze for Rat to Traverse");
- 
-        for (int[] array: maze) {
-             System.out.print(" ");
-              for (int f: array) {  
-                System.out.print(f + "  "); // printing each item
-                   }
-                System.out.print("\n"); // printing new line
-              }
-       System.out.println("");
+// testing to find a working printing for the array
 
+    print2D(maze);
 
               // traversal issue 
       System.out.println("Path found in Maze for Rat to Traverse");
       N = maze.length;
       rat.solveMaze(maze);
-
+    
       // Printing the Path
       System.out.println("\nPath/Paths for Rat to Traverse");
       ArrayList<String> ans = findPath(maze, N);
