@@ -135,7 +135,8 @@ static ArrayList<String> res;
   public static void main(String args[])
   {
       ratterMaze rat = new ratterMaze();
-      int maze[][] = { { 1, 0, 0, 0, 0, 0 },
+      int maze[][] = { 
+      { 1, 0, 0, 0, 0, 0 },
       { 1, 1, 0, 1, 0, 1 },
       { 0, 1, 0, 1, 1, 1 },
       { 1, 1, 1, 1, 0, 1 }, 
@@ -160,7 +161,7 @@ static ArrayList<String> res;
       rat.solveMaze(maze);
 
       // Printing the Path
-      System.out.println("\nPath for Rat to Traverse");
+      System.out.println("\nPath/Paths for Rat to Traverse");
       ArrayList<String> ans = findPath(maze, N);
       System.out.println(ans);
   }
