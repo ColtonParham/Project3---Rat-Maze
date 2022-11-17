@@ -1,8 +1,6 @@
 /* Java program to solve Rat in
  a Maze problem using backtracking */
 
-
-
  // maybe a way of checking to see if the correct thing is being ran is by the length of the OUTPUT. LIKE SESSSEEEES - IT IS THE SHORTEST POSSIBLE PATH. - This is to be confirmed later, but it needs to check the outputs for the looped through items, with their respective lengths, to be compared against eachother then only display the smallest one. - Might be worth to sort them by length first then only display the -1th entry from the list. 
  import java.io.*;
  import java.util.*;
