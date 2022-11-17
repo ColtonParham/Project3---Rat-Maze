@@ -46,7 +46,7 @@ public class DisjSets {
    private int [ ] s;
   
   
-   // Test main; all finds on same output line should be identical
+   // Test main; all finds on same output line should be identical - NOT NEEDED IN FINAL! 
    public static void main( String [ ] args )
    {
        int NumElements = 128;

@@ -164,6 +164,7 @@ public class Maze {
 		}
 	}
 	
+  // main to generate the random mazes..
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
