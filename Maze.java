@@ -175,7 +175,8 @@ public class Maze {
 	    System.out.println("Enter total columns of the maze: ");
 	    int cols = sc.nextInt();
 		 
-	    System.out.println("Maze: ");
+			// maze generation part one..
+	    System.out.println("Initial Randomly generated Maze: ");
 	    Maze m = new Maze();
 	    m.createMaze(rows, cols);
 	     
